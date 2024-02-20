@@ -21,14 +21,19 @@ export const SocketContextProvider = ({children}) => {
                 userId: user?._id
             }
         });
+        console.log('socket--->', socket);
         setSocket(socket);
 
         socket.on('getOnlineUsers',(users) => {
             setOnlineUsers(users);
         })
 
-        
-        return () => socket && socket.close();
+        return () => {
+            if (socket.connected === 1) { // <-- This is important
+                console.log('socketClose--->', socket);
+                socket.close();
+            }
+        }
     }, [user])
     return (
         <SocketContext.Provider value={{socket, onlineUsers}}>

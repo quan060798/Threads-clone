@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -34,7 +33,6 @@ const colors = {
 const theme = extendTheme({ config, styles, colors });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
 	<RecoilRoot>
 		<BrowserRouter>
 		<ChakraProvider theme={theme}>
@@ -44,6 +42,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 			</SocketContextProvider>
 		</ChakraProvider>
 		</BrowserRouter>
-	</RecoilRoot>
-  </React.StrictMode>,
+	</RecoilRoot>,
 )

@@ -30,6 +30,7 @@ jobs:
         npm ci
         touch .env
         echo "${{ secrets.PROD_BACKEND_ENV }}" > .env
+        pm2 restart backend
 
     - name: Build and set up frontend
       run: |
@@ -37,3 +38,4 @@ jobs:
         npm ci
         touch .env.production
         echo "${{ secrets.PROD_FRONTEND_ENV }}" > .env.production
+        npm run build

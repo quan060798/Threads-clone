@@ -24,6 +24,17 @@ export const SocketContextProvider = ({children}) => {
         console.log('socket--->', socket);
         setSocket(socket);
 
+        socket.on("connect_error", (err) => {
+            // the reason of the error, for example "xhr poll error"
+            console.log('connect_error_message', err.message);
+          
+            // some additional description, for example the status code of the initial HTTP response
+            console.log('connect_error_description', err.description);
+          
+            // some additional context, for example the XMLHttpRequest object
+            console.log('connect_error_context', err.context);
+          });
+
         socket.on('getOnlineUsers',(users) => {
             setOnlineUsers(users);
         })

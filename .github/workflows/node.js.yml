@@ -18,17 +18,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd backend
-    - run: npm ci
-    - run: |
+
+    - name: Build and set up backend
+      run: |
+        cd backend
+        npm ci
         touch .env
         echo "${{ secrets.PROD_BACKEND_ENV }}" > .env
-    - run: cd frontend
-    - run: npm ci
-    - run: |
+
+    - name: Build and set up frontend
+      run: |
+        cd frontend
+        npm ci
         touch .env.production
-        echo "${{ secrets.PROD_FRONTEND_ENV }}" > .env
+        echo "${{ secrets.PROD_FRONTEND_ENV }}" > .env.production

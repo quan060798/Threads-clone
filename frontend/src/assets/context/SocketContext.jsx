@@ -16,11 +16,24 @@ export const SocketContextProvider = ({children}) => {
     const [onlineUsers, setOnlineUsers] = useState([]);
 
     useEffect(() => {
-        const socket = io('http://localhost:5000', {
-            query:{
-                userId: user?._id
-            }
-        });
+        let socket;
+        const socketIo = import.meta.env.VITE_SOCKET_IO_ENDPOINT;
+        if (import.meta.env.MODE === 'production') {
+            
+            socket = io({
+                path: socketIo,
+                query:{
+                    userId: user?._id
+                }
+            });    
+        } else {
+            socket = io(socketIo, {
+                query:{
+                    userId: user?._id
+                }
+            });
+        }
+        
         console.log('socket--->', socket);
         setSocket(socket);
 

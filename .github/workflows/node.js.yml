@@ -30,8 +30,7 @@ jobs:
         npm ci
         touch .env
         echo "${{ secrets.PROD_BACKEND_ENV }}" > .env
-        PM2_APP_EXIST=$(pm2 list | grep -w "backend" | wc -l)
-        if [[ $PM2_APP_EXIST -gt 0 ]]; then
+        if pm2 pid backend; then
           pm2 restart "backend"
         else
           pm2 start "npm run start" --name backend

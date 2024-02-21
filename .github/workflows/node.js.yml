@@ -30,9 +30,14 @@ jobs:
         npm ci
         touch .env
         echo "${{ secrets.PROD_BACKEND_ENV }}" > .env
-        pm2 stop all
-        pm2 delete all
+        PM2_STATUS=$(pm2 list | grep "backend" | awk '{print $4}')
+        if [ "$PM2_STATUS" == "online" ]; then
+        echo "Backend application is already running. Restarting..."
+        pm2 restart backend
+        else
+        echo "Backend application is not running. Starting..."
         pm2 start "npm run start" --name backend
+        fi
 
     - name: Build and set up frontend
       run: |

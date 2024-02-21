@@ -39,4 +39,5 @@ jobs:
         touch .env.production
         echo "${{ secrets.PROD_FRONTEND_ENV }}" > .env.production
         ulimit -u 2000
+        ulimit -v 800000
         npm run build

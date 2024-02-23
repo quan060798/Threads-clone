@@ -30,8 +30,6 @@ jobs:
         npm ci
         touch .env
         echo "${{ secrets.PROD_BACKEND_ENV }}" > .env
-        pm2 stop --silent some-name
-        pm2 delete --silent some-name
         pm2 start "npm run start" --name backend
 
     - name: Build and set up frontend

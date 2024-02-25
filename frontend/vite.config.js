@@ -23,6 +23,11 @@ export default defineConfig(({ command, mode }) => {
       'process.env': {
         'import.meta.env.VITE_SOCKET_IO_ENDPOINT': JSON.stringify(env.VITE_SOCKET_IO_ENDPOINT)
       },
+    },
+    test: {
+      environment: 'jsdom',
+      globals: true,
+      setupFiles: './tests/setup.js',
     }
   }
 })

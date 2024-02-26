@@ -12,7 +12,7 @@ The application is deployed on Amazon EC2, ensuring accessibility and reliabilit
 
 ### Deployment Link
 
-https://threadsclone.site (will be active soon)
+https://threadsclone.site
 
 ## Getting Started
 

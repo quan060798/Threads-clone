@@ -30,3 +30,26 @@ Run command `npm run dev`
 The application will be accessible at `http://localhost:3000`
 
 Happy coding! 🚀
+
+## Screenshot
+
+### Login
+![image](https://github.com/quan060798/Threads-clone/assets/46003038/23c9489b-abbe-45b8-a494-4fd2978adeff)
+
+### Sign Up
+![image](https://github.com/quan060798/Threads-clone/assets/46003038/129ca6be-5eb7-4081-9e67-e37a3e321511)
+
+### Home Page
+![image](https://github.com/quan060798/Threads-clone/assets/46003038/4f4865fb-3482-4f22-8b7b-5a2e53d128a1)
+
+### User Profile
+![image](https://github.com/quan060798/Threads-clone/assets/46003038/28c21c99-94de-4432-bda0-b353d6cb76cb)
+
+### User Home Page
+![image](https://github.com/quan060798/Threads-clone/assets/46003038/23f5ca8c-98d4-40ee-88e1-56dfd749398f)
+
+### Chat Page With Online Status
+![image](https://github.com/quan060798/Threads-clone/assets/46003038/e48b020b-6ca7-413e-a74c-b2550be036c4)
+
+
+

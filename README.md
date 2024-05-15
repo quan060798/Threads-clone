@@ -10,9 +10,8 @@ Threads Clone is a simple web application built using the MERN stack (MongoDB, E
 
 The application is deployed on Amazon EC2, ensuring accessibility and reliability. Continuous Integration and Continuous Deployment (CI/CD) are set up using GitHub Actions. This automates the deployment process, making it hassle-free.
 
-### Deployment Link
+### Deployment Link (Currently Not Available)
 
-https://threadsclone.site
 
 ## Getting Started
 
